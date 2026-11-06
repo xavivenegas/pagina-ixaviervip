@@ -1,100 +1,129 @@
-    <!DOCTYPE html>
-    <html lang="es">
-        <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>ixaviervip</title>
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Tiny5+Duo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="css/style.css">
-        </head>
-        <body>
+<!DOCTYPE html> <!-- Indica que es un documento HTML5 -->
+<html lang="es"> <!-- Raíz de la página; lang="es" = idioma español -->
 
-            <!-- Cabecera: título y descripción del artista -->
+<!-- ==========================================================
+     HEAD: información de la página que no se ve en pantalla
+     ========================================================== -->
+<head>
+    <meta charset="utf-8"> <!-- Permite tildes y la ñ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Adapta la página al móvil -->
+    <title>ixaviervip</title> <!-- Texto de la pestaña del navegador -->
 
-            <header>
-                <h1>ixaviervip</h1>
-                <p>Artista independiente · Lima, Perú · Música electrónica</p>
-                <p>Melodías, samples y texturas hasta encontrar <strong>un sonido propio</strong>.</p>
-            </header>
+    <!-- Fuente Tiny5 Duo (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiny5+Duo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-            <!-- Menú de navegación: enlaces a las secciones de abajo -->
+    <!-- Mis estilos -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-            <nav>
-                <a href="#canciones">Canciones</a>
-                <a href="#sobre-mi">Sobre mí</a>
-                <a  href="#contacto">Contacto</a>
-            </nav>
-    <!-- Enlaces para escuchar mi música y seguirme en redes -->
-     
-            <section>
-                <h2>Escúchame en:</h2>
-    <!-- ul = lista con viñetas; cada li es un elemento de la lista -->
-                    <ul>
-                        <li><a href="https://open.spotify.com/artist/0CFzduNz38JecWC8a5LM9j">Spotify</a></li>
-                        <li><a href="https://music.apple.com/gb/artist/ixaviervip/1759605586">Apple Music</a></li>
-                        <li><a href="https://music.amazon.com.mx/artists/B0DBJC9X1J/ixaviervip">Amazon Music</a></li>
-                    </ul>
+<!-- ==========================================================
+     BODY: todo lo que se ve en la página
+     ========================================================== -->
+<body>
 
-                 <h2>Sígueme:</h2>
-                    <ul>
-                        <li><a href="https://www.tiktok.com/@ixaviervip">TikTok</a></li>
-                        <li><a href="https://www.instagram.com/ixaviervip/">Instagram</a></li>
-                        <li><a href="https://whatsapp.com/channel/0029Va5AgJGAYlUStphP7M1o">Canal de WhatsApp</a></li>
-                    </ul>
-            </section>
-            <section>   
-                <h2 id="canciones">Canciones</h2>
-                <p>Empieza por la primera. Es la que más me representa.</p>
+    <!-- 1. CABECERA: nombre y descripción del artista -->
+    <header>
+        <h1>ixaviervip</h1> <!-- Título principal (solo debe haber uno) -->
+        <p>Artista independiente · Lima, Perú · Música electrónica</p>
+        <p>Melodías, samples y texturas hasta encontrar <strong>un sonido propio</strong>.</p> <!-- strong = negrita -->
+    </header>
 
-                <article>
-                    <img src="img/portada_antes_de_irme.png" alt="Portada de Antes de irme" width="130">
-                    <div>
-                        <h3>Antes de irme</h3>
-                        <p><em>26 de enero de 2025</em></p>
-                        <audio src="audio/Antes-de-irme.wav" controls></audio>
-                    </div>
-                </article>
-                <article>
-                    <img src="img/portada_yeap.jpg" alt="Portada de yeap" width="130">
-                    <div>
-                        <h3>yeap</h3>
-                        <p><em>13 de junio de 2026</em></p>
-                        <audio src="audio/yeap.wav" controls></audio>
-                    </div>
-                </article>
-                <article>
-                    <img src="img/portada_distraido.png" alt="Portada de Distraído" width="130">
-                    <div>
-                        <h3>Distraido</h3>
-                        <p><em>30 de septiembre de 2024</em></p>
-                        <audio src="audio/Distraido.wav" controls></audio>
-                    </div>
-                </article>
-                <article>
-                    <img src="img/portada_exclusive.png" alt="Portada de Exclusive" width="130">
-                    <div>
-                        <h3>Exclusive</h3>
-                        <p><em>23 de diciembre de 2025</em></p>
-                        <audio src="audio/Exclusive.wav" controls></audio>
-                    </div>
-                </article>
-            </section>
-            <br>
-            <section>
-                <img src="img/xavier_sobre_mi.jpg" alt="Foto de Xavier" width="260">
-                <h2 id="sobre-mi">Sobre mí</h2>
-                <p>Soy un artista musical que busca crear experiencias únicas a través de la música.</p> 
-                <p>Hago esto por pasión y por diversión. Empece a subir canciones desde 2024 y tengo en planes hacer un EP posiblemente para 2027</p>
-            </section>
-            <section>
-                <h2 id="contacto">Contacto</h2>
-                <p>Si quieres contactarme, puedes escribirme a mi correo electrónico:<br> <a href="mailto:xaviervenegas55@gmail.com">xaviervenegas55@gmail.com</a></p>
-            </section>
-         <footer>
-            <p>© 2026 ixaviervip</p>
-        </footer>
-        
-        </body>
-    </html>
+    <!-- 2. MENÚ: enlaces internos que llevan a cada sección por su id -->
+    <nav>
+        <a href="en.html" class="idioma">English</a>
+        <a href="#canciones">Canciones</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <!-- 3. ENLACES: plataformas de música y redes sociales -->
+    <section>
+        <h2>Escúchame en:</h2>
+        <!-- ul = lista con viñetas; cada li es un elemento de la lista -->
+        <ul>
+            <li><a href="https://open.spotify.com/artist/0CFzduNz38JecWC8a5LM9j">Spotify</a></li>
+            <li><a href="https://music.apple.com/gb/artist/ixaviervip/1759605586">Apple Music</a></li>
+            <li><a href="https://music.amazon.com.mx/artists/B0DBJC9X1J/ixaviervip">Amazon Music</a></li>
+        </ul>
+
+        <h2>Sígueme:</h2>
+        <ul>
+            <li><a href="https://www.tiktok.com/@ixaviervip">TikTok</a></li>
+            <li><a href="https://www.instagram.com/ixaviervip/">Instagram</a></li>
+            <li><a href="https://whatsapp.com/channel/0029Va5AgJGAYlUStphP7M1o">Canal de WhatsApp</a></li>
+        </ul>
+    </section>
+
+    <!-- 4. CANCIONES: cada article es una tarjeta (portada + título + fecha + audio) -->
+    <section>
+        <h2 id="canciones">Canciones</h2> <!-- El id es el destino del enlace del menú -->
+
+        <!-- Canción 1 -->
+        <article>
+            <img src="img/portada_antes_de_irme.png" alt="Portada de Antes de irme" width="130"> <!-- alt = descripción de la imagen -->
+            <div> <!-- Agrupa el texto para ponerlo al lado de la portada -->
+                <h3>Antes de irme</h3>
+                <p><em>26 de enero de 2025</em></p> <!-- em = cursiva -->
+                <blockquote>Empieza por la primera. Es la que más me representa.</blockquote> <!-- Cita -->
+                <audio src="audio/Antes-de-irme.wav" controls></audio> <!-- controls = muestra los botones -->
+            </div>
+        </article>
+
+        <!-- Canción 2 -->
+        <article>
+            <img src="img/portada_yeap.jpg" alt="Portada de yeap" width="130">
+            <div>
+                <h3>yeap</h3>
+                <p><em>13 de junio de 2026</em></p>
+                <audio src="audio/yeap.wav" controls></audio>
+            </div>
+        </article>
+
+        <!-- Canción 3 -->
+        <article>
+            <img src="img/portada_distraido.png" alt="Portada de Distraído" width="130">
+            <div>
+                <h3>Distraido</h3>
+                <p><em>30 de septiembre de 2024</em></p>
+                <audio src="audio/Distraido.wav" controls></audio>
+            </div>
+        </article>
+
+        <!-- Canción 4 -->
+        <article>
+            <img src="img/portada_exclusive.png" alt="Portada de Exclusive" width="130">
+            <div>
+                <h3>Exclusive</h3>
+                <p><em>23 de diciembre de 2025</em></p>
+                <audio src="audio/Exclusive.wav" controls></audio>
+            </div>
+        </article>
+    </section>
+
+    <br> <!-- Salto de línea para separar secciones (mejor hacerlo con CSS: margin) -->
+
+    <!-- 5. SOBRE MÍ -->
+    <section>
+        <img src="img/xavier_sobre_mi.jpg" alt="Foto de Xavier" width="260">
+        <h2 id="sobre-mi">Sobre mí</h2>
+        <p>Soy un artista musical que busca crear experiencias únicas a través de la música.</p>
+        <p>Hago esto por pasión y por diversión. Empece a subir canciones desde 2024 y tengo en planes hacer un EP posiblemente para 2027</p>
+    </section>
+
+    <!-- 6. CONTACTO -->
+    <section>
+        <h2 id="contacto">Contacto</h2>
+        <p>Si quieres contactarme, puedes escribirme a mi correo electrónico:<br> <!-- br = salto de línea -->
+            <a href="mailto:xaviervenegas55@gmail.com">xaviervenegas55@gmail.com</a> <!-- mailto: abre el correo -->
+        </p>
+    </section>
+
+    <!-- 7. PIE DE PÁGINA -->
+    <footer>
+        <p>© 2026 ixaviervip</p>
+    </footer>
+
+</body>
+</html>
