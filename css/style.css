@@ -1,0 +1,35 @@
+   body {   
+    background: #0f0f14;
+    color: #eaeaf2;
+    font-family: Arial, sans-serif; 
+    }
+    section {
+     max-width: 800px;
+    margin: 40px auto; 
+    }
+   header { 
+    text-align: center; 
+    background: linear-gradient(#1f1537, #0f0f14); 
+    }
+    h1 {
+  font-family: "Tiny5 Duo", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(2.5rem, 10vw, 6rem);
+  letter-spacing: 4px;
+  line-height: 1;
+  font-variation-settings: "ROND" 100;
+    }
+   nav { 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; position: sticky; 
+    top: 0; 
+}
+/* Listas de enlaces: sin viñetas y en horizontal */
+  section ul {
+    list-style: none;   /* quita los puntos */
+    padding: 0;         /* quita la sangría */
+    display: flex;      /* pone los elementos en fila */
+    gap: 16px;          /* espacio entre ellos */
+  }
