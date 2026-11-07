@@ -1,0 +1,136 @@
+<!DOCTYPE html> <!-- Indica que es un documento HTML5 -->
+<html lang="en"> <!-- Raíz de la página; lang="en" = idioma inglés -->
+
+<!-- ==========================================================
+     HEAD: información de la página que no se ve en pantalla
+     ========================================================== -->
+<head>
+    <meta charset="utf-8"> <!-- Permite tildes y la ñ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Adapta la página al móvil -->
+    <title>ixaviervip</title> <!-- Texto de la pestaña del navegador -->
+
+    <!-- Fuente Tiny5 Duo (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiny5+Duo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Mis estilos -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- ==========================================================
+     BODY: todo lo que se ve en la página
+     ========================================================== -->
+<body>
+
+    <!-- 1. CABECERA: nombre y descripción del artista -->
+    <header>
+        <!-- Language selector (dropdown, top-right corner) -->
+    <div class="idiomas">
+        <select onchange="location.href=this.value" aria-label="Language">
+            <option value="index.html">Español</option>
+            <option value="en.html" selected>English</option>
+        </select>
+    </div>
+        <h1>ixaviervip</h1> <!-- Título principal (solo debe haber uno) -->
+        <p>Independent artist · Lima, Peru · Electronic music</p>
+        <p>Melodies, samples and textures until I find <strong>a sound of my own</strong>.</p> <!-- strong = negrita -->
+    </header>
+
+    <!-- 2. MENÚ: enlaces internos que llevan a cada sección por su id -->
+    <nav>
+        <a href="#canciones">Songs</a>
+        <a href="#sobre-mi">About me</a>
+        <a href="#contacto">Contact</a>
+    </nav>
+
+    <!-- 3. ENLACES: plataformas de música y redes sociales -->
+    <section>
+    <h2>Listen on:</h2>
+        <ul class="redes">
+            <li><a href="https://open.spotify.com/artist/0CFzduNz38JecWC8a5LM9j" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a></li>
+            <li><a href="https://music.apple.com/gb/artist/ixaviervip/1759605586" aria-label="Apple Music"><i class="fa-brands fa-itunes-note"></i></a></li>
+            <li><a href="https://music.amazon.com.mx/artists/B0DBJC9X1J/ixaviervip" aria-label="Amazon Music"><img src="img/icons/amazon-music.svg" alt=""></a></li>
+        </ul>
+
+    <h2>Follow me:</h2>
+        <ul class="redes">
+            <li><a href="https://www.tiktok.com/@ixaviervip" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></li>
+            <li><a href="https://www.instagram.com/ixaviervip/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://whatsapp.com/channel/0029Va5AgJGAYlUStphP7M1o" aria-label="WhatsApp channel"><i class="fa-brands fa-whatsapp"></i></a></li>
+        </ul>
+    </section>
+
+    <!-- 4. CANCIONES: cada article es una tarjeta (portada + título + fecha + audio) -->
+    <section>
+        <h2 id="canciones">Songs</h2> <!-- El id es el destino del enlace del menú -->
+
+        <!-- Canción 1 -->
+        <article>
+            <img src="img/portada_antes_de_irme.png" alt="Cover of Antes de irme" width="130"> <!-- alt = descripción de la imagen -->
+            <div> <!-- Agrupa el texto para ponerlo al lado de la portada -->
+                <h3>Antes de irme</h3>
+                <p><em>January 26, 2025</em></p> <!-- em = cursiva -->
+                <blockquote>Start with the first one. It’s the one that represents me best.</blockquote> <!-- Cita -->
+                <audio src="audio/Antes-de-irme.wav" controls></audio> <!-- controls = muestra los botones -->
+            </div>
+        </article>
+
+        <!-- Canción 2 -->
+        <article>
+            <img src="img/portada_yeap.jpg" alt="Cover of yeap" width="130">
+            <div>
+                <h3>yeap</h3>
+                <p><em>June 13, 2026</em></p>
+                <audio src="audio/yeap.wav" controls></audio>
+            </div>
+        </article>
+
+        <!-- Canción 3 -->
+        <article>
+            <img src="img/portada_distraido.png" alt="Cover of Distraído" width="130">
+            <div>
+                <h3>Distraido</h3>
+                <p><em>September 30, 2024</em></p>
+                <audio src="audio/Distraido.wav" controls></audio>
+            </div>
+        </article>
+
+        <!-- Canción 4 -->
+        <article>
+            <img src="img/portada_exclusive.png" alt="Cover of Exclusive" width="130">
+            <div>
+                <h3>Exclusive</h3>
+                <p><em>December 23, 2025</em></p>
+                <audio src="audio/Exclusive.wav" controls></audio>
+            </div>
+        </article>
+    </section>
+
+    <br> <!-- Salto de línea para separar secciones (mejor hacerlo con CSS: margin) -->
+
+    <!-- 5. SOBRE MÍ -->
+    <section>
+        <img src="img/xavier_sobre_mi.jpg" alt="Foto de Xavier" width="260">
+        <h2 id="sobre-mi">About me</h2>
+        <p>I’m a musician who aims to create unique experiences through music.</p>
+        <p>I do this out of passion and for fun. I started releasing songs in 2024, and I’m planning to put out an EP, possibly in 2027.</p>
+    </section>
+
+    <!-- 6. CONTACTO -->
+    <section>
+        <h2 id="contacto">Contact</h2>
+        <p>If you’d like to get in touch, you can email me at:<br> <!-- br = salto de línea -->
+            <a href="mailto:xaviervenegas55@gmail.com">xaviervenegas55@gmail.com</a> <!-- mailto: abre el correo -->
+        </p>
+    </section>
+
+    <!-- 7. PIE DE PÁGINA -->
+    <footer>
+        <p>© 2026 ixaviervip</p>
+    </footer>
+
+</body>
+</html>
