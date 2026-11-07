@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tiny5+Duo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Mis estilos -->
     <link rel="stylesheet" href="css/style.css">
@@ -25,6 +27,13 @@
 
     <!-- 1. CABECERA: nombre y descripción del artista -->
     <header>
+        <!-- Selector de idioma (desplegable, esquina superior derecha) -->
+    <div class="idiomas">
+        <select onchange="location.href=this.value" aria-label="Idioma">
+            <option value="index.html" selected>Español</option>
+            <option value="en.html">English</option>
+        </select>
+    </div>
         <h1>ixaviervip</h1> <!-- Título principal (solo debe haber uno) -->
         <p>Artista independiente · Lima, Perú · Música electrónica</p>
         <p>Melodías, samples y texturas hasta encontrar <strong>un sonido propio</strong>.</p> <!-- strong = negrita -->
@@ -32,7 +41,6 @@
 
     <!-- 2. MENÚ: enlaces internos que llevan a cada sección por su id -->
     <nav>
-        <a href="en.html" class="idioma">English</a>
         <a href="#canciones">Canciones</a>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#contacto">Contacto</a>
@@ -40,20 +48,20 @@
 
     <!-- 3. ENLACES: plataformas de música y redes sociales -->
     <section>
-        <h2>Escúchame en:</h2>
         <!-- ul = lista con viñetas; cada li es un elemento de la lista -->
-        <ul>
-            <li><a href="https://open.spotify.com/artist/0CFzduNz38JecWC8a5LM9j">Spotify</a></li>
-            <li><a href="https://music.apple.com/gb/artist/ixaviervip/1759605586">Apple Music</a></li>
-            <li><a href="https://music.amazon.com.mx/artists/B0DBJC9X1J/ixaviervip">Amazon Music</a></li>
-        </ul>
+        <h2>Escúchame en:</h2>
+             <ul class="redes">
+                <li><a href="https://open.spotify.com/artist/0CFzduNz38JecWC8a5LM9j" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a></li>
+                <li><a href="https://music.apple.com/gb/artist/ixaviervip/1759605586" aria-label="Apple Music"><i class="fa-brands fa-itunes-note"></i></a></li>
+                <li><a href="https://music.amazon.com.mx/artists/B0DBJC9X1J/ixaviervip" aria-label="Amazon Music"><img src="img/icons/amazon-music.svg" alt=""></a></li>
+             </ul>
 
         <h2>Sígueme:</h2>
-        <ul>
-            <li><a href="https://www.tiktok.com/@ixaviervip">TikTok</a></li>
-            <li><a href="https://www.instagram.com/ixaviervip/">Instagram</a></li>
-            <li><a href="https://whatsapp.com/channel/0029Va5AgJGAYlUStphP7M1o">Canal de WhatsApp</a></li>
-        </ul>
+            <ul class="redes">
+                <li><a href="https://www.tiktok.com/@ixaviervip" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></li>
+                <li><a href="https://www.instagram.com/ixaviervip/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://whatsapp.com/channel/0029Va5AgJGAYlUStphP7M1o" aria-label="Canal de WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></li>
+            </ul>
     </section>
 
     <!-- 4. CANCIONES: cada article es una tarjeta (portada + título + fecha + audio) -->
