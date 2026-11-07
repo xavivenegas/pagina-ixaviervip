@@ -1,35 +1,157 @@
-   body {   
+/* ==========================================================
+   ESTILOS DE ixaviervip
+   Orden: 1. Base · 2. Cabecera y título · 3. Menú
+          4. Secciones · 5. Listas de enlaces
+          6. Tarjetas de canciones · 7. Cita
+   ========================================================== */
+
+
+/* ===== 1. BASE: lo que afecta a toda la página ===== */
+body {
+  background: #0f0f14;           /* fondo oscuro */
+  color: #eaeaf2;                /* color del texto */
+  font-family: Arial, sans-serif; /* letra de todo el texto */
+}
+
+
+/* ===== 2. CABECERA Y TÍTULO ===== */
+header {
+  text-align: center;                                /* centra el texto */
+  background: linear-gradient(#1f1537, #0f0f14);     /* degradado: morado arriba, oscuro abajo */
+  position: relative;                                /* el selector de idioma se coloca respecto al header */
+}
+
+.idiomas {
+    position: absolute;   /* lo saca del flujo normal */
+    top: 16px;            /* separación desde arriba */
+    right: 16px;          /* separación desde la derecha */
+}
+
+.idiomas select {
     background: #0f0f14;
     color: #eaeaf2;
-    font-family: Arial, sans-serif; 
-    }
-    section {
-     max-width: 800px;
-    margin: 40px auto; 
-    }
-   header { 
-    text-align: center; 
-    background: linear-gradient(#1f1537, #0f0f14); 
-    }
-    h1 {
-  font-family: "Tiny5 Duo", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: clamp(2.5rem, 10vw, 6rem);
-  letter-spacing: 4px;
-  line-height: 1;
-  font-variation-settings: "ROND" 100;
-    }
-   nav { 
-    display: flex; 
-    justify-content: center; 
-    gap: 30px; position: sticky; 
-    top: 0; 
+    border: 1px solid #8b5cf6;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 1rem;
+    cursor: pointer;
 }
-/* Listas de enlaces: sin viñetas y en horizontal */
-  section ul {
-    list-style: none;   /* quita los puntos */
-    padding: 0;         /* quita la sangría */
-    display: flex;      /* pone los elementos en fila */
-    gap: 16px;          /* espacio entre ellos */
-  }
+
+@media (max-width: 600px) {
+    .idiomas {
+        position: static;       /* en móvil deja de ser esquina y pasa a ir centrado arriba */
+        width: max-content;
+        margin: 12px auto 0;
+    }
+}
+
+h1 {
+  font-family: "Tiny5 Duo", sans-serif;   /* fuente de Google Fonts (sans-serif es el respaldo) */
+  font-weight: 700;                       /* grosor de la letra */
+  font-style: normal;                     /* sin cursiva */
+  font-size: clamp(2.5rem, 10vw, 6rem);   /* tamaño: mínimo, ideal según pantalla, máximo */
+  letter-spacing: 4px;                    /* espacio entre letras */
+  line-height: 1;                         /* altura de línea ajustada */
+  font-variation-settings: "ROND" 100;    /* redondea las esquinas de los píxeles */
+}
+
+a {
+  color: #c4b5fd;                /* color de todos los enlaces: lila claro (legible sobre fondo oscuro) */
+}
+
+a:hover {
+  color: #ffffff;                /* al pasar el ratón por encima, el enlace se vuelve blanco */
+}
+
+/* ===== 3. MENÚ DE NAVEGACIÓN ===== */
+nav {
+  display: flex;               /* pone los enlaces en fila */
+  justify-content: center;     /* los centra */
+  gap: 30px;                   /* espacio entre enlaces */
+  position: sticky;            /* se queda pegado arriba al bajar */
+  top: 0;                      /* pegado al borde superior */
+}
+
+
+/* ===== 4. SECCIONES ===== */
+section {
+  max-width: 800px;            /* ancho máximo del contenido */
+  margin: 40px auto;           /* 40px arriba y abajo; auto = centrada */
+}
+
+
+/* ===== 5. LISTAS DE ENLACES (Escúchame en / Sígueme) ===== */
+section ul {
+  list-style: none;            /* quita los puntos */
+  padding: 0;                  /* quita la sangría */
+  display: flex;               /* pone los elementos en fila */
+  gap: 16px;                   /* espacio entre ellos */
+}
+
+/* ===== BOTONES DE REDES Y PLATAFORMAS (círculos con icono) ===== */
+.redes {
+  justify-content: center;     /* centra los círculos (ya es flex por "section ul") */
+  gap: 24px;                   /* separación entre ellos */
+}
+
+.redes a {
+  display: flex;
+  align-items: center;         /* centra el icono dentro del círculo */
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;          /* lo hace circular */
+  background: #ffffff;
+  color: #1f1537;              /* color de los iconos de fuente */
+  font-size: 1.6rem;           /* tamaño de esos iconos */
+  text-decoration: none;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.redes a:hover {
+  transform: translateY(-4px); /* sube un poco al pasar el ratón */
+  background: #c4b5fd;         /* fondo lila al pasar el ratón */
+}
+
+.redes a img {
+  width: 40px;                 /* logo de Amazon Music */
+  height: 40px;
+}
+
+/* ===== 6. TARJETAS DE CANCIONES ===== */
+article {
+  display: flex;                    /* portada a la izquierda, texto a la derecha */
+  gap: 20px;                        /* espacio entre portada y texto */
+  background: #1a1a24;              /* fondo de la tarjeta */
+  padding: 16px;                    /* espacio interior */
+  border-radius: 14px;              /* esquinas redondeadas */
+  transition: transform 0.2s;       /* anima el movimiento al pasar el ratón */
+}
+
+article:hover {
+  transform: translateY(-4px);      /* la tarjeta sube 4px al pasar el ratón */
+}
+
+article img {
+  width: 130px;
+  height: 130px;                    /* portada cuadrada */
+  object-fit: cover;                /* recorta lo que sobre en lugar de estirar */
+  border-radius: 10px;              /* esquinas redondeadas */
+  flex-shrink: 0;                   /* evita que se encoja al faltar espacio */
+}
+
+
+/* ===== 7. CITA (blockquote) ===== */
+blockquote {
+  margin: 8px 0 12px;               /* separación arriba y abajo */
+  padding-left: 12px;               /* espacio entre la línea y el texto */
+  border-left: 3px solid #8b5cf6;   /* línea morada a la izquierda */
+  color: #c4b5fd;                   /* color del texto de la cita */
+  font-style: italic;               /* cursiva */
+}
+
+/* ===== 8. PIE DE PÁGINA ===== */
+footer {
+  text-align: center;   /* centra el texto */
+  padding: 24px;        /* espacio arriba y abajo */
+}
