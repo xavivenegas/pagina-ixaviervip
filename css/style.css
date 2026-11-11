@@ -1,157 +1,360 @@
-/* ==========================================================
-   ESTILOS DE ixaviervip
-   Orden: 1. Base · 2. Cabecera y título · 3. Menú
-          4. Secciones · 5. Listas de enlaces
-          6. Tarjetas de canciones · 7. Cita
-   ========================================================== */
+/* ===== 1. VARIABLES: los colores y fuentes se definen una vez y se reutilizan ===== */
+:root {
+  --fondo: #0b0a0b;                       /* negro suave */
+  --texto: #f1ece6;                       /* blanco cálido */
+  --apagado: #a39b94;                     /* gris para etiquetas */
+  --acento: #ff4d55;                      /* rojo (sale de tu foto) */
+  --linea: rgba(241, 236, 230, 0.35);     /* líneas finas */
+  --serif: "Bodoni Moda", serif;          /* letra elegante para títulos */
+  --mono: "Space Mono", monospace;        /* letra técnica para detalles */
+}
 
+/* ===== 2. BASE ===== */
+* {
+  box-sizing: border-box;      /* el padding no agranda las cajas */
+}
 
-/* ===== 1. BASE: lo que afecta a toda la página ===== */
 body {
-  background: #0f0f14;           /* fondo oscuro */
-  color: #eaeaf2;                /* color del texto */
-  font-family: Arial, sans-serif; /* letra de todo el texto */
-}
-
-
-/* ===== 2. CABECERA Y TÍTULO ===== */
-header {
-  text-align: center;                                /* centra el texto */
-  background: linear-gradient(#1f1537, #0f0f14);     /* degradado: morado arriba, oscuro abajo */
-  position: relative;                                /* el selector de idioma se coloca respecto al header */
-}
-
-.idiomas {
-    position: absolute;   /* lo saca del flujo normal */
-    top: 16px;            /* separación desde arriba */
-    right: 16px;          /* separación desde la derecha */
-}
-
-.idiomas select {
-    background: #0f0f14;
-    color: #eaeaf2;
-    border: 1px solid #8b5cf6;
-    border-radius: 8px;
-    padding: 6px 12px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-@media (max-width: 600px) {
-    .idiomas {
-        position: static;       /* en móvil deja de ser esquina y pasa a ir centrado arriba */
-        width: max-content;
-        margin: 12px auto 0;
-    }
-}
-
-h1 {
-  font-family: "Tiny5 Duo", sans-serif;   /* fuente de Google Fonts (sans-serif es el respaldo) */
-  font-weight: 700;                       /* grosor de la letra */
-  font-style: normal;                     /* sin cursiva */
-  font-size: clamp(2.5rem, 10vw, 6rem);   /* tamaño: mínimo, ideal según pantalla, máximo */
-  letter-spacing: 4px;                    /* espacio entre letras */
-  line-height: 1;                         /* altura de línea ajustada */
-  font-variation-settings: "ROND" 100;    /* redondea las esquinas de los píxeles */
+  margin: 0;                   /* quita el margen por defecto */
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: var(--mono);
 }
 
 a {
-  color: #c4b5fd;                /* color de todos los enlaces: lila claro (legible sobre fondo oscuro) */
+  color: var(--texto);
+  text-decoration: none;       /* sin subrayado */
 }
 
 a:hover {
-  color: #ffffff;                /* al pasar el ratón por encima, el enlace se vuelve blanco */
+  color: var(--acento);        /* al pasar el ratón se vuelve rojo */
 }
 
-/* ===== 3. MENÚ DE NAVEGACIÓN ===== */
-nav {
-  display: flex;               /* pone los enlaces en fila */
-  justify-content: center;     /* los centra */
-  gap: 30px;                   /* espacio entre enlaces */
-  position: sticky;            /* se queda pegado arriba al bajar */
-  top: 0;                      /* pegado al borde superior */
-}
-
-
-/* ===== 4. SECCIONES ===== */
+/* Cada sección: ancho máximo, centrada y con aire alrededor */
 section {
-  max-width: 800px;            /* ancho máximo del contenido */
-  margin: 40px auto;           /* 40px arriba y abajo; auto = centrada */
+  max-width: 1248px;
+  margin: 0 auto;              /* auto = centrada */
+  padding: 72px 56px;
 }
 
-
-/* ===== 5. LISTAS DE ENLACES (Escúchame en / Sígueme) ===== */
-section ul {
-  list-style: none;            /* quita los puntos */
-  padding: 0;                  /* quita la sangría */
-  display: flex;               /* pone los elementos en fila */
-  gap: 16px;                   /* espacio entre ellos */
+/* Etiqueta pequeña en mayúsculas, la usan varios títulos */
+.etiqueta-seccion {
+  margin: 0 0 20px;
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 3px;         /* espacio entre letras */
+  text-transform: uppercase;   /* todo en mayúsculas */
+  color: var(--apagado);
 }
 
-/* ===== BOTONES DE REDES Y PLATAFORMAS (círculos con icono) ===== */
-.redes {
-  justify-content: center;     /* centra los círculos (ya es flex por "section ul") */
-  gap: 24px;                   /* separación entre ellos */
+/* Título grande en serif (Canciones, Contacto) */
+.titulo-grande {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(40px, 6vw, 72px);   /* mínimo, ideal según pantalla, máximo */
+  letter-spacing: -0.02em;
 }
 
-.redes a {
+/* ===== 3. CABECERA (HERO) ===== */
+.hero {
+  min-height: 100vh;                   /* ocupa toda la altura de la pantalla */
   display: flex;
-  align-items: center;         /* centra el icono dentro del círculo */
-  justify-content: center;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;          /* lo hace circular */
-  background: #ffffff;
-  color: #1f1537;              /* color de los iconos de fuente */
-  font-size: 1.6rem;           /* tamaño de esos iconos */
-  text-decoration: none;
-  transition: transform 0.2s, background 0.2s;
+  flex-direction: column;              /* apila: barra, título, datos */
+  justify-content: space-between;      /* barra arriba, título en medio, datos abajo */
+  padding: 28px 56px 48px;
+  /* capa oscura (degradado) + foto; la ruta lleva ../ porque se cuenta desde la carpeta css/ */
+  background-image:
+    linear-gradient(rgba(11, 10, 11, 0.55), rgba(11, 10, 11, 0.92)),
+    url("../img/hero.jpg");
+  background-size: cover;              /* la foto cubre todo sin deformarse */
+  background-position: center 35%;
 }
 
-.redes a:hover {
-  transform: translateY(-4px); /* sube un poco al pasar el ratón */
-  background: #c4b5fd;         /* fondo lila al pasar el ratón */
+.barra {
+  display: flex;
+  flex-wrap: wrap;                     /* en pantallas pequeñas pasa a otra línea */
+  justify-content: space-between;      /* uno a cada lado */
+  align-items: center;
+  gap: 16px 32px;
 }
 
-.redes a img {
-  width: 40px;                 /* logo de Amazon Music */
-  height: 40px;
+/* Textos pequeños en mayúsculas de la cabecera */
+.etiqueta,
+.menu a,
+.datos span {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #cfc7bf;
 }
 
-/* ===== 6. TARJETAS DE CANCIONES ===== */
-article {
-  display: flex;                    /* portada a la izquierda, texto a la derecha */
-  gap: 20px;                        /* espacio entre portada y texto */
-  background: #1a1a24;              /* fondo de la tarjeta */
-  padding: 16px;                    /* espacio interior */
-  border-radius: 14px;              /* esquinas redondeadas */
-  transition: transform 0.2s;       /* anima el movimiento al pasar el ratón */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 32px;
 }
 
-article:hover {
-  transform: translateY(-4px);      /* la tarjeta sube 4px al pasar el ratón */
+.menu a:hover {
+  color: var(--acento);
 }
 
-article img {
-  width: 130px;
-  height: 130px;                    /* portada cuadrada */
-  object-fit: cover;                /* recorta lo que sobre en lugar de estirar */
-  border-radius: 10px;              /* esquinas redondeadas */
-  flex-shrink: 0;                   /* evita que se encoja al faltar espacio */
+/* Desplegable de idioma */
+.menu select {
+  background: transparent;
+  color: var(--texto);
+  border: 1px solid var(--linea);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-family: var(--mono);
+  font-size: 13px;
+  cursor: pointer;
 }
 
+.menu select option {
+  background: var(--fondo);            /* para que la lista desplegada se lea */
+  color: var(--texto);
+}
 
-/* ===== 7. CITA (blockquote) ===== */
-blockquote {
-  margin: 8px 0 12px;               /* separación arriba y abajo */
-  padding-left: 12px;               /* espacio entre la línea y el texto */
-  border-left: 3px solid #8b5cf6;   /* línea morada a la izquierda */
-  color: #c4b5fd;                   /* color del texto de la cita */
-  font-style: italic;               /* cursiva */
+h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(56px, 15vw, 232px); /* enorme y se adapta a la pantalla */
+  line-height: 0.9;
+  letter-spacing: -0.03em;             /* letras muy juntas */
+  text-align: center;
+}
+
+.datos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px 40px;
+  border-top: 1px solid var(--linea);  /* línea fina encima */
+  padding-top: 18px;
+}
+
+/* ===== 4. ENLACES (botones en forma de píldora) ===== */
+.enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 96px;                      /* separación entre los dos grupos */
+}
+
+.pills {
+  list-style: none;                    /* sin puntos */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;                    /* tamaño cómodo para tocar en móvil */
+  padding: 0 22px;
+  border: 1px solid var(--linea);
+  border-radius: 999px;                /* extremos totalmente redondos */
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.pill:hover {
+  background: var(--texto);            /* se rellena al pasar el ratón */
+  color: var(--fondo);
+}
+
+/* ===== 5. CANCIONES ===== */
+.cita {
+  margin: 0 0 40px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--acento);
+}
+
+.tabla-caja {
+  overflow-x: auto;                    /* scroll lateral si no cabe */
+}
+
+table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;           /* une los bordes de las celdas */
+  font-size: 14px;
+}
+
+caption {
+  text-align: left;
+  padding-bottom: 16px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--apagado);
+}
+
+th,
+td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(241, 236, 230, 0.15);   /* línea tenue entre filas */
+}
+
+thead th {                             /* títulos de columna */
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--apagado);
+  border-bottom: 1px solid var(--linea);
+}
+
+tbody th {                             /* nombre de la canción */
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 28px;
+}
+
+td img {
+  display: block;
+  width: 72px;
+  height: 72px;
+  object-fit: cover;                   /* recorta en vez de estirar */
+}
+
+audio {
+  width: 100%;
+  max-width: 260px;
+}
+
+/* ===== 6. SOBRE MÍ ===== */
+.sobre {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 80px;
+  border-top: 1px solid rgba(241, 236, 230, 0.2);   /* línea que separa secciones */
+}
+
+.sobre .titulo-grande {
+  flex: 1 1 360px;                     /* columna izquierda, más ancha para el título grande */
+  margin: 0;                           /* sin margen para que quede alineado con el texto */
+}
+
+.sobre-texto {
+  flex: 3 1 480px;                     /* columna ancha a la derecha */
+  min-width: 0;
+}
+
+.frase {
+  margin: 0 0 32px;
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.detalle {
+  margin: 0;
+  max-width: 560px;
+  font-size: 15px;
+  line-height: 1.7;                    /* más aire entre líneas */
+  color: #cfc7bf;
+}
+
+/* ===== 7. CONTACTO ===== */
+.contacto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 80px;
+  border-top: 1px solid rgba(241, 236, 230, 0.2);
+}
+
+.contacto-info {
+  flex: 1 1 280px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #cfc7bf;
+}
+
+.formulario {
+  flex: 2 1 420px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;                           /* separación entre campos */
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;              /* etiqueta encima del campo */
+  gap: 8px;
+}
+
+label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--apagado);
+}
+
+input,
+textarea {
+  background: transparent;
+  color: var(--texto);
+  border: 0;
+  border-bottom: 1px solid var(--linea);   /* solo una línea debajo */
+  padding: 12px 4px;
+  font-family: var(--mono);
+  font-size: 16px;
+}
+
+textarea {
+  border: 1px solid var(--linea);      /* el mensaje con caja completa */
+  padding: 12px;
+  resize: vertical;                    /* solo se puede estirar hacia abajo */
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--acento);    /* resalta el campo que estás escribiendo */
+  outline-offset: 2px;
+}
+
+button {
+  align-self: flex-start;              /* el botón no se estira a todo el ancho */
+  min-height: 48px;
+  padding: 0 36px;
+  background: var(--acento);
+  color: var(--fondo);
+  border: 0;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 /* ===== 8. PIE DE PÁGINA ===== */
 footer {
-  text-align: center;   /* centra el texto */
-  padding: 24px;        /* espacio arriba y abajo */
+  padding: 32px 56px 48px;
+  text-align: center;
+  border-top: 1px solid rgba(241, 236, 230, 0.2);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--apagado);
+}
+
+/* ===== 9. MÓVIL: menos aire en pantallas pequeñas ===== */
+@media (max-width: 600px) {
+  .hero { padding: 20px 20px 32px; }
+  section { padding: 48px 20px; }
 }
